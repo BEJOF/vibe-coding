@@ -70,7 +70,7 @@ export default function Home() {
                 href="#contact"
                 className="vibe-button-outline"
               >
-                Je veux éviter ces pièges
+                🛑 Je veux éviter ces pièges
               </a>
             </div>
           </div>
@@ -105,6 +105,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+              <a
+                href="#contact"
+                className="vibe-button"
+              >
+                🚀 Je veux profiter de cette accélération
+              </a>
+            </div>
           </div>
         </section>
 
@@ -133,7 +141,7 @@ export default function Home() {
                 href="#contact"
                 className="vibe-button"
               >
-                Discuter de mon besoin
+                💬 Discuter de mon besoin
               </a>
             </div>
           </div>
