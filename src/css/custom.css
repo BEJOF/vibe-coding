@@ -134,6 +134,7 @@ html {
   background: transparent;
   border: 2px solid var(--ifm-color-primary);
   color: var(--ifm-color-primary);
+
   border-radius: 50px;
   padding: 0.8rem 1.5rem;
   font-weight: bold;
@@ -144,6 +145,7 @@ html {
   background: var(--ifm-color-primary);
   color: #fff;
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .section-cta {

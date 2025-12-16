@@ -1,0 +1,240 @@
+/* src/pages/offre.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.heroContent {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Sections */
+.sectionDark {
+    background-color: var(--ifm-background-color);
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 0;
+    /* More spacing for premium feel */
+}
+
+/* Subtle background mesh for hero */
+.sectionDark::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(138, 43, 226, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.sectionLight {
+    background-color: var(--vibe-card-bg);
+    padding: 8rem 0;
+}
+
+.sectionGradient {
+    background: linear-gradient(135deg, var(--vibe-bg-color) 0%, var(--vibe-card-bg) 100%);
+    padding: 8rem 0;
+}
+
+/* Problem Section */
+.problemGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 4rem;
+}
+
+.problemCard {
+    background: var(--vibe-bg-color);
+    /* Slight contrast */
+    border: 1px solid var(--vibe-border-color);
+    border-left: 4px solid #ff6b6b;
+    position: relative;
+    padding: 2.5rem;
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.problemCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.problemIcon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* Method Section */
+.methodContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+.methodFeature {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 850px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.02);
+    /* Very subtle highlight */
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.methodFeature:hover {
+    border-color: var(--ifm-color-primary);
+}
+
+.methodIcon {
+    font-size: 3rem;
+    flex-shrink: 0;
+    background: var(--vibe-card-bg);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Solutions Section */
+.solutionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.solutionCard {
+    background: var(--vibe-bg-color);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid var(--vibe-border-color);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.solutionCard::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-light));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.solutionCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    border-color: rgba(138, 43, 226, 0.2);
+}
+
+.solutionCard:hover::after {
+    opacity: 1;
+}
+
+/* Pricing Section */
+.pricingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align tops */
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+.pricingCard {
+    background: var(--vibe-card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--vibe-border-color);
+    opacity: 0.8;
+}
+
+.competitorPrice {
+    opacity: 0.6;
+    text-decoration: line-through;
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin: 1rem 0;
+}
+
+.vibePrice {
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--ifm-color-primary-light) 0%, var(--ifm-color-primary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    margin: 1.5rem 0;
+}
+
+.guaranteeBadge {
+    background: rgba(138, 43, 226, 0.08);
+    /* Softer background */
+    color: var(--ifm-color-primary);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 2rem;
+    border: 1px solid rgba(138, 43, 226, 0.15);
+}
+
+/* Final CTA */
+.finalCtaContainer {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem;
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.05) 0%, rgba(255, 255, 255, 0.0) 100%);
+    border-radius: 32px;
+    border: 1px solid rgba(138, 43, 226, 0.1);
+    box-shadow: 0 20px 60px rgba(138, 43, 226, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vibePrice {
+        font-size: 3rem;
+    }
+
+    .methodFeature {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .pricingContainer {
+        align-items: center;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+}

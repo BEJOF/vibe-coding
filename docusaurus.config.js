@@ -78,6 +78,16 @@ const config = {
         },
         items: [
           {
+            to: '/#problem',
+            position: 'left',
+            label: 'Problème',
+          },
+          {
+            to: '/#method',
+            position: 'left',
+            label: 'Méthode',
+          },
+          {
             to: '/#solutions',
             position: 'left',
             label: 'Solutions',
@@ -85,12 +95,12 @@ const config = {
           {
             to: '/#pricing',
             position: 'left',
-            label: 'Forfaits',
+            label: 'Tarifs',
           },
           {
             to: '/#contact',
             position: 'left',
-            label: 'Diagnostic Express',
+            label: 'Contact',
           },
         ],
       },
@@ -98,17 +108,18 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Solutions',
+            title: 'Offre',
             items: [
-              { label: 'Landing Pages', to: '/#solutions' },
-              { label: 'Dashboards', to: '/#solutions' },
-              { label: 'MVPs', to: '/#solutions' },
+              { label: 'Problème', to: '/#problem' },
+              { label: 'Méthode', to: '/#method' },
+              { label: 'Solutions', to: '/#solutions' },
             ],
           },
           {
             title: 'Contact',
             items: [
-              { label: 'Diagnostic Express', to: '/#contact' },
+              { label: 'Tarifs', to: '/#pricing' },
+              { label: 'Réserver', to: '/#contact' },
             ],
           },
         ],
