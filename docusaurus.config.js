@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Vibe Coding',
+  title: 'Accélérateur Vibe Coding',
   tagline: 'Obtenez votre MVP ou Dashboard de gestion sur mesure en 5 jours.',
   favicon: 'img/favicon.ico',
 
@@ -64,14 +64,14 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/vibe-social-card.jpg',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Vibe Coding',
+        title: 'Accélérateur Vibe Coding',
         logo: {
           alt: 'Vibe Coding Logo',
           src: 'img/logo.png',
