@@ -24,7 +24,7 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'bejof', // Usually your GitHub org/user name.
   projectName: 'vibe-coding', // Usually your repo name.
-  // deploymentBranch: 'gh-pages',
+  deploymentBranch: 'main',
   trailingSlash: true,
 
   onBrokenLinks: 'throw',
