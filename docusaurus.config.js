@@ -123,7 +123,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Vibe Coding. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://bejof.org">BEJOF</a>. Built with Accélérateur Vibe Coding and Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
