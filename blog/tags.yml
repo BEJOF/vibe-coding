@@ -17,3 +17,58 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+startup:
+  label: Startup
+  permalink: /startup
+  description: Startup tag description
+
+mvp:
+  label: MVP
+  permalink: /mvp
+  description: MVP tag description
+
+speed:
+  label: Speed
+  permalink: /speed
+  description: Speed tag description
+
+business:
+  label: Business
+  permalink: /business
+  description: Business tag description
+
+agence:
+  label: Agence
+  permalink: /agence
+  description: Agence tag description
+
+freelance:
+  label: Freelance
+  permalink: /freelance
+  description: Freelance tag description
+
+transparence:
+  label: Transparence
+  permalink: /transparence
+  description: Transparence tag description
+
+ia:
+  label: IA
+  permalink: /ia
+  description: IA tag description
+
+intelligence artificielle:
+  label: Intelligence Artificielle
+  permalink: /intelligence-artificielle
+  description: Intelligence Artificielle tag description
+
+productivité:
+  label: Productivité
+  permalink: /productivite
+  description: Productivité tag description
+
+dev:
+  label: Dev
+  permalink: /dev
+  description: Dev tag description
