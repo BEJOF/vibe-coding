@@ -3,7 +3,7 @@ slug: pourquoi-attendre-2-mois-est-une-erreur
 title: "Pourquoi attendre 2 mois pour votre MVP est une erreur fatale"
 authors: [bejof]
 tags: [startup, mvp, speed, business]
-date: 2025-01-01
+date: 2025-09-01
 ---
 
 Vous avez une idée de génie. Vous avez le budget. Mais votre agence vous annonce **8 semaines de développement**.

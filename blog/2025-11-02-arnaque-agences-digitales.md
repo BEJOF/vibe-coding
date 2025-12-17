@@ -3,7 +3,7 @@ slug: /arnaque-agences-digitales-prix
 title: "L'Arnaque (involontaire) des Agences Digitales classiques"
 authors: [bejof]
 tags: [agence, freelance, dev, transparence]
-date: 2025-01-02
+date: 2025-11-02
 ---
 
 J'ai travaillé des années en agence. J'ai vu l'envers du décor. Et si vous êtes un client, vous payez bien plus que du code.

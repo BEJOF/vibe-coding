@@ -3,7 +3,7 @@ slug: ia-senior-dev-vs-equipe
 title: "Comment un Senior + IA détruit une équipe entière"
 authors: [bejof]
 tags: [ia, intelligence artificielle, productivité, dev]
-date: 2025-01-03
+date: 2025-12-17
 ---
 
 En 2024, le développement logiciel a changé de paradigme.
