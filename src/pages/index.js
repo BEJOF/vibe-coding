@@ -26,10 +26,8 @@ export default function Home() {
 
           <div className="section-cta">
             <a
-              href="https://tally.so/r/example"
+              href="formulaire"
               className="vibe-button pulse"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               ⚡ Démarrer Mon Diagnostic Gratuit et Ultra-Rapide
             </a>
@@ -155,8 +153,8 @@ export default function Home() {
             <div className={styles.pricingContainer}>
               <div className={clsx('card', styles.pricingCard)} style={{ maxWidth: '400px' }}>
                 <h3>Agence Standard</h3>
-                <p className={styles.competitorPrice}>à partir de 12 000 €</p>
-                <ul>
+                <p className={styles.competitorPrice}>à partir de 5 000 €</p>
+                <ul style={{ padding: 0, textAlign: 'left', marginTop: '2rem' }}>
                   <li>Délais longs (2+ mois)</li>
                   <li>Frais de gestion de projet</li>
                   <li>Développeurs juniors souvent</li>
@@ -165,8 +163,9 @@ export default function Home() {
 
               <div className={clsx('pricing-column', 'vibe')}>
                 <h3>Forfait Vibe Coding</h3>
-                <div className={styles.vibePrice}>4 950 €</div>
-                <p><strong>Même qualité, 4 fois plus rapide.</strong></p>
+                <div><strong>à partir de</strong></div>
+                <div className={styles.vibePrice}>2 500 €</div>
+                <p><strong>Même qualité,<br /> 4 fois plus rapide,<br /> 2 fois moins chère.</strong></p>
                 <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left', marginTop: '2rem' }}>
                   <li>✅ Architecture Senior éprouvée</li>
                   <li>✅ Délai court garanti</li>
@@ -174,10 +173,8 @@ export default function Home() {
                 </ul>
                 <div style={{ marginTop: '2rem' }}>
                   <a
-                    href="https://tally.so/r/example"
+                    href="#contact"
                     className="vibe-button pulse"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     style={{ display: 'inline-block' }}
                   >
                     🚀 Je réserve mon lancement
@@ -202,10 +199,8 @@ export default function Home() {
               </p>
 
               <a
-                href="https://tally.so/r/example"
+                href="formulaire"
                 className="vibe-button pulse"
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 ⚡ Je veux connaître mon prix et mon délai précis en 24h !
               </a>
