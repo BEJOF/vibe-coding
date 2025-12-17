@@ -109,12 +109,6 @@ const config = {
             position: 'left',
             label: 'Contact',
           },
-          // {
-          //   type: 'doc',
-          //   docId: 'manifeste',
-          //   position: 'right',
-          //   label: 'Wiki',
-          // },
           {
             to: '/blog',
             position: 'right',
@@ -136,10 +130,6 @@ const config = {
           {
             title: 'Ressources',
             items: [
-              {
-                label: 'Wiki',
-                to: '/docs/manifeste',
-              },
               {
                 label: 'Blog',
                 to: '/blog',
