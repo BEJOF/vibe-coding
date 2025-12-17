@@ -35,7 +35,7 @@ export default function Formulaire() {
             if (step < totalSteps) {
                 setStep(prev => prev + 1);
             }
-        }, 300);
+        }, 500);
     };
 
     const handleNext = () => {
@@ -304,11 +304,30 @@ export default function Formulaire() {
 }
 
 function RadioCard({ label, desc, value, selected, onSelect }) {
+    const [isClicked, setIsClicked] = useState(false);
     const isSelected = selected === value;
+
+    const handleClick = () => {
+        // Trigger animation
+        setIsClicked(true);
+
+        // Call the onSelect handler
+        onSelect(value);
+
+        // Remove animation class after animation completes
+        setTimeout(() => {
+            setIsClicked(false);
+        }, 500);
+    };
+
     return (
         <div
-            className={clsx(styles.radioLabel, isSelected && styles.radioLabelSelected)}
-            onClick={() => onSelect(value)}
+            className={clsx(
+                styles.radioLabel,
+                isSelected && styles.radioLabelSelected,
+                isClicked && styles.radioLabelClicked
+            )}
+            onClick={handleClick}
         >
             <div className={styles.radioInput} style={{
                 borderRadius: '50%', border: '2px solid #555',
@@ -325,3 +344,4 @@ function RadioCard({ label, desc, value, selected, onSelect }) {
         </div>
     );
 }
+

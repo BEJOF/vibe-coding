@@ -268,6 +268,36 @@
     }
 }
 
+/* Typeform-style click animations */
+@keyframes cellPulse {
+    0% {
+        transform: scale(1) translateX(0);
+        box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7);
+    }
+    50% {
+        transform: scale(1.03) translateX(5px);
+        box-shadow: 0 0 25px 10px rgba(138, 43, 226, 0.3);
+    }
+    100% {
+        transform: scale(1) translateX(5px);
+        box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+    }
+}
+
+@keyframes cellFlash {
+    0%, 100% {
+        background: rgba(138, 43, 226, 0.15);
+    }
+    50% {
+        background: rgba(138, 43, 226, 0.35);
+    }
+}
+
+/* Active animation class */
+.radioLabelClicked {
+    animation: cellPulse 0.5s ease-out, cellFlash 0.5s ease-out;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .formContainer {
