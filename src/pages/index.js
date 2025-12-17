@@ -84,8 +84,8 @@ export default function Home() {
               <div className={styles.methodFeature}>
                 <div className={styles.methodIcon}>🚀</div>
                 <div>
-                  <h3>Couper le temps par deux</h3>
-                  <p>L'IA optimisée fait 80% du travail. Je me concentre uniquement sur les 20% restant qui impacteront le plus votre métier.</p>
+                  <h3>Couper le temps par quatre</h3>
+                  <p>En utilisant une architecture senior pré-construite et la puissance de l'IA pour impacter le plus possible votre métier.</p>
                 </div>
               </div>
               <div className={styles.methodFeature}>
@@ -186,6 +186,12 @@ export default function Home() {
             <p style={{ marginTop: '2rem', fontStyle: 'italic', opacity: 0.8 }}>
               "Votre Garantie : Un prix fixe, un délai court, et un suivi constant."
             </p>
+
+            <div style={{ marginTop: '1rem' }}>
+              <a href="comparatif_vibe_coding.pdf" target="_blank" style={{ color: 'white', textDecoration: 'underline', opacity: 0.7, fontSize: '0.9rem' }}>
+                📄 Télécharger le comparatif détaillé (PDF)
+              </a>
+            </div>
           </div>
         </section>
 
