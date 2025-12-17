@@ -108,6 +108,7 @@ html {
 }
 
 .vibe-button {
+  display: inline-block;
   background-color: var(--ifm-color-primary);
   border: none;
   color: #fff;
@@ -117,6 +118,7 @@ html {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 [data-theme='dark'] .vibe-button {
@@ -233,6 +235,16 @@ html {
   color: var(--ifm-color-primary);
 }
 
+/* Fix button overflow in pricing cards */
+.pricing-column .vibe-button {
+  white-space: normal;
+  font-size: 1rem;
+  padding: 0.9rem 1.5rem;
+  max-width: 100%;
+  text-align: center;
+  line-height: 1.3;
+}
+
 .highlight {
   color: var(--ifm-color-primary);
   font-weight: bold;
@@ -262,4 +274,42 @@ html {
   /* background: transparent; Removed to let Docusaurus handle adaptability */
   /* backdrop-filter: blur(10px); */
   border-bottom: 1px solid var(--vibe-border-color);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .vibe-button {
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vibe-button {
+    font-size: 0.95rem;
+    padding: 0.85rem 1.2rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+  }
 }
