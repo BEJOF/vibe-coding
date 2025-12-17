@@ -1,8 +1,8 @@
 bejof:
   name: Jonathan Labéjof
-  title: Founder Good Vibe Coding and BEJOF
+  title: Founder of Good Vibe Coding and BEJOF
   url: https://bejof.org
-  image_url: https://github.com/bejof.png
+  image_url: /img/bejof.png
   page:
     # customize the url of the author page at /blog/authors/<permalink>
     permalink: '/all-bejof-articles'

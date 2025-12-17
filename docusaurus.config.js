@@ -27,8 +27,15 @@ const config = {
   deploymentBranch: 'main',
   trailingSlash: true,
 
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+      onBrokenMarkdownImages: 'warn'
+    }
+  },
+
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -64,7 +71,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/vibe-social-card.jpg',
+      image: 'img/good-vibe-coding-social-card.jpg',
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
@@ -102,12 +109,12 @@ const config = {
             position: 'left',
             label: 'Contact',
           },
-          {
-            type: 'doc',
-            docId: 'manifeste',
-            position: 'right',
-            label: 'Wiki',
-          },
+          // {
+          //   type: 'doc',
+          //   docId: 'manifeste',
+          //   position: 'right',
+          //   label: 'Wiki',
+          // },
           {
             to: '/blog',
             position: 'right',
@@ -131,7 +138,7 @@ const config = {
             items: [
               {
                 label: 'Wiki',
-                to: '/docs/01-manifeste',
+                to: '/docs/manifeste',
               },
               {
                 label: 'Blog',

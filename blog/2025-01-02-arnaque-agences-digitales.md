@@ -1,5 +1,5 @@
 ---
-slug: arnaque-agences-digitales-prix
+slug: /arnaque-agences-digitales-prix
 title: "L'Arnaque (involontaire) des Agences Digitales classiques"
 authors: [bejof]
 tags: [agence, freelance, dev, transparence]
