@@ -77,7 +77,7 @@ export default function Home() {
         {/* 3. La Méthode */}
         <section id="method" className={clsx('section', styles.sectionGradient)}>
           <div className={styles.container}>
-            <h2 className="section-title">L'Accélérateur Vibe Coding</h2>
+            <h2 className="section-title">Le Good Vibe Coding</h2>
             <p style={{ marginBottom: '3rem' }}>L'Efficacité du Développeur Senior boosté à l'IA</p>
 
             <div className={styles.methodContainer}>
@@ -149,6 +149,7 @@ export default function Home() {
         <section id="pricing" className={clsx('section', styles.sectionDark)}>
           <div className={styles.container}>
             <h2 className="section-title">Qualité Senior, Prix Compétitif</h2>
+            <p style={{ marginBottom: '3rem' }}>Exemple d'un site vitrine</p>
 
             <div className={styles.pricingContainer}>
               <div className={clsx('card', styles.pricingCard)} style={{ maxWidth: '400px' }}>
@@ -162,9 +163,9 @@ export default function Home() {
               </div>
 
               <div className={clsx('pricing-column', 'vibe')}>
-                <h3>Forfait Vibe Coding</h3>
+                <h3>Forfait Good Vibe Coding</h3>
                 <div><strong>à partir de</strong></div>
-                <div className={styles.vibePrice}>2 500 €</div>
+                <div className={styles.vibePrice}>2 450 €</div>
                 <p><strong>Même qualité,<br /> 4 fois plus rapide,<br /> 2 fois moins chère.</strong></p>
                 <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left', marginTop: '2rem' }}>
                   <li>✅ Architecture Senior éprouvée</li>

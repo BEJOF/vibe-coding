@@ -33,4 +33,4 @@ Avec des outils comme Antigravity et mes propres scripts d'automatisation, je pr
 2. **Zéro latence** : Si vous voulez changer un bouton, je le change. Je n'ai pas besoin d'ouvrir un ticket Jira.
 3. **Sécurité Senior** : L'IA code vite, mais fait des erreurs. Mon œil de Senior (15 ans d'XP) valide, sécurise et optimise chaque ligne générée.
 
-C'est ce que j'appelle le **Accélérateur Vibe Coding**. C'est le futur du développement pour les entrepreneurs pressés.
+C'est ce que j'appelle le **Good Vibe Coding**. C'est le futur du développement pour les entrepreneurs pressés.

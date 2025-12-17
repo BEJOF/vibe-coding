@@ -57,7 +57,7 @@ function ProblemSection() {
             className="button button--primary button--lg vibe-button"
 
             to="#solutions">
-            ✨ Découvrir la méthode Vibe Coding
+            ✨ Découvrir la méthode Good Vibe Coding
           </Link>
         </div>
       </div>
@@ -69,7 +69,7 @@ function SolutionSection() {
   return (
     <section id="solutions" className="section solution-section">
       <div className="container">
-        <h2 className="section-title">✨ Votre Solution Unique : Le "Vibe Coding"</h2>
+        <h2 className="section-title">✨ Votre Solution Unique : Le "Good Vibe Coding"</h2>
         <div className="row">
           <div className="col col--4">
             <div className="card vibe-card">
@@ -143,7 +143,7 @@ function PricingSection() {
             </Link>
           </div>
           <div className="pricing-column vibe">
-            <h3>Vibe Coding</h3>
+            <h3>Good Vibe Coding</h3>
             <div className="price">À partir de 4 950 € HT</div>
             <p>1 semaine</p>
             <p className="highlight">Tout inclus : Code, Infra, Support 30j</p>

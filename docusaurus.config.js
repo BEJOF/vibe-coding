@@ -10,7 +10,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Accélérateur Vibe Coding',
+  title: 'Good Vibe Coding',
   tagline: 'Obtenez votre MVP ou Dashboard de gestion sur mesure en 5 jours.',
   favicon: 'img/favicon.ico',
 
@@ -71,9 +71,9 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Accélérateur Vibe Coding',
+        title: 'Good Vibe Coding',
         logo: {
-          alt: 'Vibe Coding Logo',
+          alt: 'Good Vibe Coding Logo',
           src: 'img/logo.png',
         },
         items: [
@@ -103,6 +103,12 @@ const config = {
             label: 'Contact',
           },
           {
+            type: 'doc',
+            docId: 'manifeste',
+            position: 'right',
+            label: 'Wiki',
+          },
+          {
             to: '/blog',
             position: 'right',
             label: 'Blog',
@@ -123,13 +129,20 @@ const config = {
           {
             title: 'Ressources',
             items: [
-              { label: 'Blog', to: '/blog' },
+              {
+                label: 'Wiki',
+                to: '/docs/01-manifeste',
+              },
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
               { label: 'Tarifs', to: '/#pricing' },
               { label: 'Réserver', to: '/#contact' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://bejof.org">BEJOF</a>. Fait par Accélérateur Vibe Coding avec Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} <a href="https://bejof.org">BEJOF</a>. Fait par Good Vibe Coding avec Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,

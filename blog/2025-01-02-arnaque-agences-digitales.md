@@ -31,7 +31,7 @@ Vous payez 15 000 € pour 4 500 € de valeur réelle produite (le code).
 
 ## Mon Contre-Pied Radical
 
-Avec l'approche **AccélérateurVibe Coding**, je supprime les intermédiaires.
+Avec l'approche **Good Vibe Coding**, je supprime les intermédiaires.
 
 - Pas de commercial (c'est moi).
 - Pas de chef de projet (c'est moi).
