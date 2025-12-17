@@ -188,7 +188,7 @@ export default function Home() {
             </p>
 
             <div style={{ marginTop: '1rem' }}>
-              <a href="comparatif_vibe_coding.pdf" target="_blank" style={{ color: 'white', textDecoration: 'underline', opacity: 0.7, fontSize: '0.9rem' }}>
+              <a href="comparatif_vibe_coding.pdf" target="_blank" style={{ textDecoration: 'underline', opacity: 0.7, fontSize: '0.9rem' }}>
                 📄 Télécharger le comparatif détaillé (PDF)
               </a>
             </div>
