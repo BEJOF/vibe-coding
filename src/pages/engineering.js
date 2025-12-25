@@ -77,7 +77,7 @@ export default function Engineering() {
     }, []);
 
     return (
-        <Layout title="Vibe Engineering" description="Expertise 15 ans pour vos projets Web & App.">
+        <Layout title="Good Vibe Coding" description="Expertise 15 ans pour vos projets Web & App.">
 
             {/* 1. HERO SECTION */}
             <motion.header
@@ -111,7 +111,7 @@ export default function Engineering() {
                             whileHover={{ scale: 1.05 }}
                         >
                             <span className={styles.badgePulse}></span>
-                            <span>🚀 8 clients propulsés en 2024</span>
+                            <span>🚀 Déjà 8 projets propulsés en un temps record</span>
                         </motion.div>
 
                         <motion.div variants={fadeInUp}>
@@ -159,7 +159,7 @@ export default function Engineering() {
                                 </p>
                             </motion.div>
                             <motion.div className={styles.painCard} variants={fadeInUp} whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(138,43,226,0.2)' }}>
-                                <div className={styles.painTitle}>⏰ Des délais de 4 à 8 semaines</div>
+                                <div className={styles.painTitle}>🐌 Des délais de 4 à 8 semaines</div>
                                 <p className={styles.painText}>
                                     Vous perdez votre avance sur le marché en attendant que ça bouge.
                                 </p>
@@ -197,6 +197,15 @@ export default function Engineering() {
                         >
                             Le Choc de Simplification
                         </motion.h2>
+                        <motion.p
+                            style={{ textAlign: 'center', color: '#888', marginBottom: '3rem' }}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            L'Efficacité du Développeur Senior boosté à l'IA
+                        </motion.p>
                         <motion.div
                             className={styles.methodGrid}
                             variants={staggerContainer}
@@ -370,7 +379,7 @@ export default function Engineering() {
                                     <p>
                                         "Bonjour, je suis <strong>Jonathan Labéjof</strong>.
                                         Après 15 ans à coder pour des grands comptes et des startups, j'ai vu trop de projets s'enliser dans des réunions inutiles.<br /><br />
-                                        J'ai créé <strong>Vibe Engineering</strong> pour redonner du plaisir à la création : je code à la vitesse de votre pensée. Vous n'engagez pas une agence de 20 personnes, vous engagez un partenaire qui exécute en temps réel."
+                                        J'ai créé <strong>Good Vibe Coding</strong> pour redonner du plaisir à la création : je code à la vitesse de votre pensée. Vous n'engagez pas une agence de 20 personnes, vous engagez un partenaire qui exécute en temps réel."
                                     </p>
                                 </div>
                             </div>
@@ -404,7 +413,7 @@ export default function Engineering() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            Le Processus Automatisé
+                            Votre projet livré en 7 jours !
                         </motion.h2>
                         <motion.div
                             className={styles.processGrid}
@@ -414,20 +423,21 @@ export default function Engineering() {
                             viewport={{ once: true, amount: 0.2 }}
                         >
                             {[
-                                { num: '1', title: 'Le Quiz', desc: '2 min pour qualifier votre besoin.' },
-                                { num: '2', title: 'Le Diagnostic', desc: '15 min pour recevoir gratuitement votre Dossier de projet (PRD). (valeur 5000€)' },
-                                { num: '3', title: "L'Appel Flash", desc: '1 hr pour valider les détails et première démo.' },
-                                { num: '4', title: 'Le Sprint', desc: '7 jours pour développer et livrer avec un suivi continu.' }
+                                { num: '1', title: 'Le Quiz', time: '2 minutes', desc: 'pour qualifier votre besoin.' },
+                                { num: '2', title: 'Le Diagnostic', time: '15 minutes', desc: 'pour recevoir gratuitement votre Dossier de projet (PRD). (valeur 5000€)' },
+                                { num: '3', title: "L'Appel Flash", time: '1 heure', desc: 'pour valider les détails et première démo.' },
+                                { num: '4', title: 'Le Sprint', time: '7 jours', desc: 'pour développer et automatiser avec un suivi continu.' }
                             ].map((step, i) => (
                                 <motion.div
                                     key={i}
                                     className={styles.processStep}
                                     variants={fadeInUp}
-                                    whileHover={{ y: -5 }}
+                                    whileHover={{ y: -8 }}
                                 >
                                     <div className={styles.processIcon}>{step.num}</div>
                                     <div className={styles.processTitle}>{step.title}</div>
-                                    <div style={{ color: '#888' }}>{step.desc}</div>
+                                    <div className={styles.processTime}>{step.time}</div>
+                                    <div className={styles.processDesc}>{step.desc}</div>
                                 </motion.div>
                             ))}
                         </motion.div>
@@ -483,7 +493,7 @@ export default function Engineering() {
                         >
                             <h3 style={{ color: 'white', marginBottom: '2rem' }}>Prêt à passer à la vitesse supérieure ?</h3>
                             <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton} style={{ fontSize: '1.3rem', padding: '1.2rem 3rem' }}>
-                                Générer mon dossier de projet (PRD) gratuitement<br />(valeur 5000€)
+                                Générer mon Dossier de Projet gratuitement<br />(valeur 5000€)
                             </Link>
                         </motion.div>
                     </div>

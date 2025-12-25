@@ -1,23 +1,965 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+/* src/pages/engineering.module.css */
 
-.heroBanner {
-  padding: 4rem 0;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Typography Overrides for Premium Feel */
+.titleGradient {
+  background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.titleAccent {
+  color: #8A2BE2;
+}
+
+/* 1. HERO SECTION */
+.heroSection {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
   text-align: center;
+  background: var(--vibe-bg-color);
+  padding: 8rem 0;
   position: relative;
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(138, 43, 226, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.buttons {
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.heroSubtitle {
+  font-size: 1.4rem;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+/* Social Proof Badge */
+.socialProofBadge {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.8rem;
+  background: rgba(138, 43, 226, 0.15);
+  border: 1px solid rgba(138, 43, 226, 0.4);
+  padding: 0.6rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  color: #ddd;
+  margin: 0 auto 2rem;
+  width: fit-content;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.badgePulse {
+  width: 10px;
+  height: 10px;
+  background: #8A2BE2;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(138, 43, 226, 0);
+  }
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  padding: 6rem 0;
+  background: var(--vibe-bg-color);
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.testimonialCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.testimonialCard:hover {
+  border-color: #8A2BE2;
+  transform: translateY(-3px);
+}
+
+.testimonialText {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.testimonialAuthor {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* 2. PAIN SECTION */
+.painSection {
+  padding: 8rem 0;
+  background: var(--vibe-card-bg);
+}
+
+.painGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.painCard {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #222;
+  transition: transform 0.3s ease;
+}
+
+.painCard:hover {
+  transform: translateY(-5px);
+  border-color: red;
+}
+
+.painTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.painText {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* 3. METHOD SECTION */
+.methodSection {
+  padding: 8rem 0;
+  background: var(--vibe-card-bg);
+}
+
+.methodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.methodCard {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #222;
+  transition: transform 0.3s ease;
+}
+
+.methodCard:hover {
+  transform: translateY(-5px);
+  border-color: #8A2BE2;
+}
+
+.methodTitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.methodText {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+/* 4. SOLUTIONS / PRICING SECTION */
+.pricingSection {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, var(--vibe-card-bg) 0%, var(--vibe-bg-color) 100%);
+}
+
+.pricingTable {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid #333;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.pricingCard {
+  padding: 3rem 2rem;
+  background: rgba(25, 25, 25, 0.8);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid #333;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+}
+
+.pricingCard:hover {
+  background: rgba(40, 40, 40, 0.95);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(138, 43, 226, 0.2);
+  z-index: 10;
+}
+
+.pricingCard:hover .pricingPrice {
+  text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.pricingCard:last-child {
+  border-right: none;
+}
+
+/* 5. Featured pricing card (middle) */
+.pricingCardFeatured {
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid #8A2BE2;
+  box-shadow: 0 0 30px rgba(138, 43, 226, 0.15);
+}
+
+.pricingHeader {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  min-height: 60px;
+}
+
+.pricingDesc {
+  color: #888;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.pricingPrice {
+  font-size: 1.8rem;
+  color: #8A2BE2;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.pricingDelivery {
+  font-size: 0.9rem;
+  color: #fff;
+  opacity: 0.7;
+  margin-bottom: 2rem;
+}
+
+/* 6. HUMAN SECTION */
+.humanSection {
+  padding: 8rem 0;
+  background: var(--vibe-bg-color);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.humanGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.profileImageContainer {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.profileImage {
+  width: 100%;
+  border-radius: 20px;
+  filter: grayscale(20%);
+  transition: filter 0.3s;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid #333;
+}
+
+.profileImage:hover {
+  filter: grayscale(0%);
+}
+
+.humanQuote {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #ddd;
+  font-style: italic;
+  border-left: 4px solid #8A2BE2;
+  padding-left: 2rem;
+}
+
+/* 7. PROCESS SECTION - Interactive Timeline */
+.processSection {
+  padding: 8rem 0;
+  background: var(--vibe-card-bg);
+  overflow: hidden;
+}
+
+.processGrid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 4rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+/* Connecting Timeline Line */
+.processGrid::before {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, #333 0%, #8A2BE2 50%, #333 100%);
+  z-index: 0;
+}
+
+/* Animated gradient on the line */
+.processGrid::after {
+  content: '';
+  position: absolute;
+  top: 35px;
+  left: 10%;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #8A2BE2, #FF0080, #8A2BE2);
+  z-index: 1;
+  animation: lineProgress 2s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes lineProgress {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+.processStep {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  max-width: 250px;
+  padding: 0 1rem;
+}
+
+.processIcon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(145deg, #1a1a1a, #252525);
+  border: 3px solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #8A2BE2;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Pulse ring effect */
+.processIcon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid rgba(138, 43, 226, 0.3);
+  animation: pulseRing 2s infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.processStep:hover .processIcon {
+  transform: scale(1.15);
+  border-color: #8A2BE2;
+  background: linear-gradient(145deg, #1a1a1a, #8A2BE2);
+  color: white;
+  box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4);
+}
+
+.processTitle {
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  transition: color 0.3s;
+}
+
+.processStep:hover .processTitle {
+  color: #8A2BE2;
+}
+
+.processStep:hover .processTime {
+  color: #aaa;
+}
+
+.processTime {
+  color: #888;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  transition: color 0.3s;
+  font-weight: bold;
+}
+
+
+.processStep:hover .processDesc {
+  color: #aaa;
+}
+
+.processDesc {
+  color: #888;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  transition: color 0.3s;
+}
+
+.processStep:hover .processDesc {
+  color: #aaa;
+}
+
+/* Step number badge */
+.processStep::after {
+  content: '';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background: transparent;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.processStep:hover::after {
+  background: linear-gradient(90deg, #8A2BE2, #FF0080);
+  width: 60px;
+}
+
+/* 8. FAQ SECTION */
+.faqSection {
+  padding: 8rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqItem {
+  border-bottom: 1px solid #222;
+  padding: 2rem 0;
+}
+
+.faqQuestion {
+  font-size: 1.3rem;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.faqAnswer {
+  color: #999;
+  line-height: 1.6;
+}
+
+/* CTA Buttons */
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #8A2BE2 0%, #FF0080 100%);
+  color: white;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+  .container {
+    padding: 0 1rem;
+    overflow-x: hidden;
+  }
+
+  .painGrid,
+  .methodGrid,
+  .pricingTable,
+  .humanGrid,
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Timeline vertical on mobile */
+  .processGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 0;
+  }
+
+  .processGrid::before {
+    top: 0;
+    left: 50%;
+    right: auto;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    transform: translateX(-50%);
+  }
+
+  .processGrid::after {
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 0%;
+    transform: translateX(-50%);
+    animation: lineProgressVertical 2s ease-out forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes lineProgressVertical {
+    0% {
+      height: 0%;
+    }
+
+    100% {
+      height: 100%;
+    }
+  }
+
+  .processStep {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+
+  .processIcon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .pricingCard {
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .heroSection {
+    padding: 4rem 0;
+    min-height: auto;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .painSection,
+  .methodSection,
+  .pricingSection,
+  .humanSection,
+  .processSection,
+  .testimonialsSection {
+    padding: 4rem 0;
+  }
+
+  .socialProofBadge {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .testimonialCard {
+    padding: 1.5rem;
+  }
+
+  .painCard {
+    padding: 1.5rem;
+  }
+
+  .methodCard {
+    padding: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.heroContent {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.painCard {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.painCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.painCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.painCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.methodCard {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.methodCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.methodCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.methodCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.pricingCard {
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.pricingCard:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.pricingCard:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.pricingCard:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.processStep {
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.processStep:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.processStep:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.processStep:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.processStep:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.faqItem {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.faqItem:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.faqItem:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.faqItem:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.faqItem:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Light Mode Overrides */
+html[data-theme='light'] .heroSection {
+  background: radial-gradient(circle at center, #ffffff 0%, #f4f4f4 60%);
+}
+
+html[data-theme='light'] .heroTitle {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .heroSubtitle {
+  color: #555;
+}
+
+html[data-theme='light'] .titleGradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #555 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+html[data-theme='light'] .painSection {
+  background: #f8f9fa;
+}
+
+html[data-theme='light'] .painCard {
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .painCard:hover {
+  border-color: red;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+}
+
+html[data-theme='light'] .painTitle {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .painText {
+  color: #555;
+}
+
+
+html[data-theme='light'] .methodSection {
+  background: #ffffff;
+}
+
+html[data-theme='light'] .methodCard {
+  background: #f8f9fa;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .methodCard:hover {
+  border-color: #8A2BE2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 43, 226, 0.1);
+}
+
+html[data-theme='light'] .methodTitle {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .methodText {
+  color: #555;
+}
+
+html[data-theme='light'] .pricingSection {
+  background: #f4f4f4;
+}
+
+html[data-theme='light'] .pricingTable {
+  border-color: #d0d0d0;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .pricingCard {
+  background: #ffffff;
+  border-right-color: #e0e0e0;
+}
+
+/* Middle card highlight in light mode */
+html[data-theme='light'] .pricingCardFeatured {
+  background: #f0f0f0;
+  border: 2px solid #8A2BE2;
+}
+
+html[data-theme='light'] .pricingHeader {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .pricingDesc {
+  color: #666;
+}
+
+html[data-theme='light'] .pricingDelivery {
+  color: #555;
+}
+
+html[data-theme='light'] h2 {
+  color: #1a1a1a !important;
+}
+
+html[data-theme='light'] p {
+  color: #444;
+}
+
+html[data-theme='light'] .humanSection {
+  background: #ffffff;
+  border-color: #e0e0e0;
+}
+
+html[data-theme='light'] .humanQuote {
+  color: #444;
+}
+
+html[data-theme='light'] .profileImage {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border-color: #e0e0e0;
+}
+
+html[data-theme='light'] .processSection {
+  background: #f8f9fa;
+}
+
+html[data-theme='light'] .processIcon {
+  background: #fff;
+  border-color: #e0e0e0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .processTitle {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .faqSection {
+  background: #fff;
+}
+
+html[data-theme='light'] .faqItem {
+  border-bottom-color: #eee;
+}
+
+html[data-theme='light'] .faqQuestion {
+  color: #1a1a1a;
+}
+
+html[data-theme='light'] .faqAnswer {
+  color: #555;
+}
+
+/* Light Mode: Testimonials */
+html[data-theme='light'] .testimonialsSection {
+  background: #f8f9fa;
+}
+
+html[data-theme='light'] .testimonialCard {
+  background: #ffffff;
+  border-color: #e0e0e0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+html[data-theme='light'] .testimonialCard:hover {
+  border-color: #8A2BE2;
+}
+
+html[data-theme='light'] .testimonialText {
+  color: #333;
+}
+
+html[data-theme='light'] .testimonialAuthor {
+  color: #666;
+}
+
+/* Light Mode: Social Proof Badge */
+html[data-theme='light'] .socialProofBadge {
+  background: rgba(138, 43, 226, 0.08);
+  border-color: rgba(138, 43, 226, 0.3);
+  color: #333;
 }

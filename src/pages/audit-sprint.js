@@ -52,6 +52,26 @@ export default function AuditSprint() {
 
     const [status, setStatus] = useState('idle');
     const [analysisStep, setAnalysisStep] = useState(0);
+    const [error, setError] = useState('');
+
+    // Refs for focus management
+    const projectNameRef = useRef(null);
+    const goalRef = useRef(null);
+    const featuresRef = useRef(null);
+    const nameRef = useRef(null);
+    const phoneRef = useRef(null);
+    const emailRef = useRef(null);
+
+    // Auto-focus first field when step changes
+    useEffect(() => {
+        setError(''); // Clear error on step change
+        const timer = setTimeout(() => {
+            if (step === 1 && projectNameRef.current) projectNameRef.current.focus();
+            if (step === 2 && featuresRef.current) featuresRef.current.focus();
+            if (step === 4 && nameRef.current) nameRef.current.focus();
+        }, 300);
+        return () => clearTimeout(timer);
+    }, [step]);
 
     // GSAP AI Pulse Animation
     useEffect(() => {
@@ -85,6 +105,63 @@ export default function AuditSprint() {
     };
 
     const handleNext = () => {
+        // Validation per step with inline error messages and focus
+        if (step === 1) {
+            if (!formData.projectName) {
+                setError("Veuillez renseigner le nom du projet.");
+                projectNameRef.current?.focus();
+                return;
+            }
+            if (!formData.goal) {
+                setError("Veuillez renseigner l'objectif principal.");
+                goalRef.current?.focus();
+                return;
+            }
+            if (!formData.projectType) {
+                setError("Veuillez sélectionner le type de solution.");
+                return;
+            }
+        }
+        if (step === 2) {
+            if (!formData.features) {
+                setError("Veuillez renseigner les fonctionnalités.");
+                featuresRef.current?.focus();
+                return;
+            }
+            if (!formData.designStatus) {
+                setError("Veuillez sélectionner l'état du design.");
+                return;
+            }
+        }
+        if (step === 3) {
+            if (!formData.budget) {
+                setError("Veuillez sélectionner votre budget.");
+                return;
+            }
+            if (!formData.deadline) {
+                setError("Veuillez sélectionner votre échéance.");
+                return;
+            }
+        }
+        if (step === 4) {
+            if (!formData.name) {
+                setError("Veuillez renseigner votre nom.");
+                nameRef.current?.focus();
+                return;
+            }
+            if (!formData.phone) {
+                setError("Veuillez renseigner votre téléphone.");
+                phoneRef.current?.focus();
+                return;
+            }
+            if (!formData.email) {
+                setError("Veuillez renseigner votre email.");
+                emailRef.current?.focus();
+                return;
+            }
+        }
+
+        setError(''); // Clear error on successful validation
         if (step < totalSteps) {
             setStep(prev => prev + 1);
         } else {
@@ -308,13 +385,13 @@ export default function AuditSprint() {
                                         <h2 className={styles.questionTitle}>Quel est le nom de votre projet/entreprise ?</h2>
                                     </motion.div>
                                     <motion.input
+                                        ref={projectNameRef}
                                         type="text"
                                         name="projectName"
                                         className={styles.inputField}
                                         placeholder="Ex: VibeFlow, Agence Alpha..."
                                         value={formData.projectName}
                                         onChange={handleChange}
-                                        autoFocus
                                         style={{ marginBottom: '2rem' }}
                                         variants={fadeInUp}
                                         initial="hidden"
@@ -327,6 +404,7 @@ export default function AuditSprint() {
                                         <p className={styles.helperText}>Ex: Automatiser ma facturation, créer un réseau social de niche...</p>
                                     </motion.div>
                                     <motion.input
+                                        ref={goalRef}
                                         type="text"
                                         name="goal"
                                         className={styles.inputField}
@@ -372,13 +450,13 @@ export default function AuditSprint() {
                                         <h2 className={styles.questionTitle}>Quelles sont les 3 fonctionnalités indispensables ?</h2>
                                     </motion.div>
                                     <motion.textarea
+                                        ref={featuresRef}
                                         name="features"
                                         className={styles.textarea}
                                         placeholder="- Paiement Stripe&#10;- Espace Membre&#10;- Chat en direct"
                                         value={formData.features}
                                         onChange={handleChange}
                                         style={{ marginBottom: '2rem', minHeight: '120px' }}
-                                        autoFocus
                                         variants={fadeInUp}
                                         initial="hidden"
                                         animate="visible"
@@ -475,9 +553,24 @@ export default function AuditSprint() {
                                     <motion.div className={styles.questionHeader} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
                                         <h2 className={styles.questionTitle}>Vos coordonnées</h2>
                                     </motion.div>
-                                    <motion.input type="text" name="name" className={styles.inputField} placeholder="Nom complet" value={formData.name} onChange={handleChange} required style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.3 }} />
-                                    <motion.input type="tel" name="phone" className={styles.inputField} placeholder="Téléphone" value={formData.phone} onChange={handleChange} style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }} />
-                                    <motion.input type="email" name="email" className={styles.inputField} placeholder="Email" value={formData.email} onChange={handleChange} required variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.5 }} />
+                                    <motion.input ref={nameRef} type="text" name="name" className={styles.inputField} placeholder="Nom complet" value={formData.name} onChange={handleChange} required style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.3 }} />
+                                    <motion.input ref={phoneRef} type="tel" name="phone" className={styles.inputField} placeholder="Téléphone" value={formData.phone} onChange={handleChange} style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }} />
+                                    <motion.input ref={emailRef} type="email" name="email" className={styles.inputField} placeholder="Email" value={formData.email} onChange={handleChange} required variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.5 }} />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+
+                        {/* Error Message Display */}
+                        <AnimatePresence>
+                            {error && (
+                                <motion.div
+                                    className={styles.errorMessage}
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -10 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    ⚠️ {error}
                                 </motion.div>
                             )}
                         </AnimatePresence>
