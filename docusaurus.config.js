@@ -82,37 +82,55 @@ const config = {
         logo: {
           alt: 'Good Vibe Coding Logo',
           src: 'img/logo.png',
+          style: { filter: 'invert(0)' }, // Optionnel : pour adapter le logo selon le mode
         },
+        // hideOnScroll: true, // La navbar disparaît au scroll pour laisser place au contenu
         items: [
           // {
           //   to: '/#problem',
           //   position: 'left',
           //   label: 'Problème',
+          //   className: 'nav-link-vibe',
           // },
           {
             to: '/#method',
             position: 'left',
             label: 'Méthode',
+            className: 'nav-link-vibe',
           },
           {
             to: '/#solutions',
             position: 'left',
             label: 'Solutions',
+            className: 'nav-link-vibe',
           },
           {
-            to: '/#pricing',
+            to: '/#about',
             position: 'left',
-            label: 'Tarifs',
+            label: 'À propos',
+            className: 'nav-link-vibe',
           },
           {
-            to: '/#contact',
+            to: '/#process',
             position: 'left',
-            label: 'Contact',
+            label: 'Processus',
+            className: 'nav-link-vibe',
+          },
+          {
+            to: '/#faq',
+            position: 'left',
+            label: 'FAQ',
+            className: 'nav-link-vibe',
+          },
+          {
+            to: '/audit-sprint',
+            position: 'right',
+            label: 'Vérifier l\'éligibilité de mon projet ⚡',
           },
           {
             to: '/blog',
             position: 'right',
-            label: 'Blog',
+            label: 'Blog 📝',
           },
         ],
       },

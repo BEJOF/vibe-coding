@@ -114,6 +114,28 @@
     color: white;
     transition: all 0.3s ease;
     border-radius: 0;
+    position: relative;
+}
+
+/* Wrapper for slide effect - add this class to parent */
+.inputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.inputWrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #8A2BE2, #FF0080);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.inputWrapper:focus-within::after {
+    width: 100%;
 }
 
 .textarea {
@@ -125,7 +147,7 @@
 .inputField:focus,
 .textarea:focus {
     outline: none;
-    border-bottom-color: #8A2BE2;
+    border-bottom-color: transparent;
     background: linear-gradient(to top, rgba(138, 43, 226, 0.05), transparent);
 }
 
@@ -177,6 +199,7 @@
     color: #f87171;
     padding: 1rem 1.5rem;
     border-radius: 12px;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
     font-size: 0.95rem;
     font-weight: 500;

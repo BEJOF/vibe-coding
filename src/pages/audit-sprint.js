@@ -89,6 +89,7 @@ export default function AuditSprint() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
+        setError('');
     };
 
     const handleCheckboxChange = (tool) => {
@@ -98,10 +99,12 @@ export default function AuditSprint() {
                 : [...prevState.tools, tool];
             return { ...prevState, tools };
         });
+        setError('');
     };
 
     const handleSelection = (name, value) => {
         setFormData(prevState => ({ ...prevState, [name]: value }));
+        setError('');
     };
 
     const handleNext = () => {
@@ -354,8 +357,13 @@ export default function AuditSprint() {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                             >
-                                Good Vibe Coding <span style={{ color: '#8A2BE2' }}>// Audit</span>
+                                Parlez-nous de <span style={{ color: '#8A2BE2' }}>Votre projet</span>
                             </motion.h1>
+                            <p className="hero__subtitle" style={{ fontSize: '1.2rem', opacity: 0.8, textAlign: 'center', maxWidth: '600px', margin: '0 auto' }}>
+                                Vérifiez votre éligibilité en 5 minutes <br /> et obtenez votre Dossier de Projet <strike>d'une valeur de 5000 €</strike> gratuitement.
+                                {/* <br />
+                                Je vous réponds sous 24h avec une faisabilité et une estimation. */}
+                            </p>
                         </div>
 
                         {/* Animated Progress Bar */}
@@ -384,39 +392,47 @@ export default function AuditSprint() {
                                         <span className={styles.questionTag}>Étape 1/4 : L'Identité</span>
                                         <h2 className={styles.questionTitle}>Quel est le nom de votre projet/entreprise ?</h2>
                                     </motion.div>
-                                    <motion.input
-                                        ref={projectNameRef}
-                                        type="text"
-                                        name="projectName"
-                                        className={styles.inputField}
-                                        placeholder="Ex: VibeFlow, Agence Alpha..."
-                                        value={formData.projectName}
-                                        onChange={handleChange}
+                                    <motion.div
+                                        className={styles.inputWrapper}
                                         style={{ marginBottom: '2rem' }}
                                         variants={fadeInUp}
                                         initial="hidden"
                                         animate="visible"
                                         transition={{ delay: 0.1 }}
-                                    />
+                                    >
+                                        <input
+                                            ref={projectNameRef}
+                                            type="text"
+                                            name="projectName"
+                                            className={styles.inputField}
+                                            placeholder="Ex: VibeFlow, Agence Alpha..."
+                                            value={formData.projectName}
+                                            onChange={handleChange}
+                                        />
+                                    </motion.div>
 
                                     <motion.div className={styles.questionHeader} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
                                         <h2 className={styles.questionTitle} style={{ fontSize: '1.4rem' }}>En une phrase, quel est l'objectif principal ?</h2>
                                         <p className={styles.helperText}>Ex: Automatiser ma facturation, créer un réseau social de niche...</p>
                                     </motion.div>
-                                    <motion.input
-                                        ref={goalRef}
-                                        type="text"
-                                        name="goal"
-                                        className={styles.inputField}
-                                        placeholder="Objectif principal..."
-                                        value={formData.goal}
-                                        onChange={handleChange}
+                                    <motion.div
+                                        className={styles.inputWrapper}
                                         style={{ marginBottom: '2rem' }}
                                         variants={fadeInUp}
                                         initial="hidden"
                                         animate="visible"
                                         transition={{ delay: 0.3 }}
-                                    />
+                                    >
+                                        <input
+                                            ref={goalRef}
+                                            type="text"
+                                            name="goal"
+                                            className={styles.inputField}
+                                            placeholder="Objectif principal..."
+                                            value={formData.goal}
+                                            onChange={handleChange}
+                                        />
+                                    </motion.div>
 
                                     <motion.div className={styles.questionHeader} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }}>
                                         <h2 className={styles.questionTitle} style={{ fontSize: '1.4rem' }}>Quel est le type de solution souhaité ?</h2>
@@ -449,19 +465,24 @@ export default function AuditSprint() {
                                         <span className={styles.questionTag}>Étape 2/4 : Le Périmètre</span>
                                         <h2 className={styles.questionTitle}>Quelles sont les 3 fonctionnalités indispensables ?</h2>
                                     </motion.div>
-                                    <motion.textarea
-                                        ref={featuresRef}
-                                        name="features"
-                                        className={styles.textarea}
-                                        placeholder="- Paiement Stripe&#10;- Espace Membre&#10;- Chat en direct"
-                                        value={formData.features}
-                                        onChange={handleChange}
-                                        style={{ marginBottom: '2rem', minHeight: '120px' }}
+                                    <motion.div
+                                        className={styles.inputWrapper}
+                                        style={{ marginBottom: '2rem' }}
                                         variants={fadeInUp}
                                         initial="hidden"
                                         animate="visible"
                                         transition={{ delay: 0.1 }}
-                                    />
+                                    >
+                                        <textarea
+                                            ref={featuresRef}
+                                            name="features"
+                                            className={styles.textarea}
+                                            placeholder="- Paiement Stripe&#10;- Espace Membre&#10;- Chat en direct"
+                                            value={formData.features}
+                                            onChange={handleChange}
+                                            style={{ minHeight: '120px' }}
+                                        />
+                                    </motion.div>
 
                                     <motion.div className={styles.questionHeader} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
                                         <h2 className={styles.questionTitle} style={{ fontSize: '1.4rem' }}>Avez-vous déjà un design ou une charte ?</h2>
@@ -553,9 +574,15 @@ export default function AuditSprint() {
                                     <motion.div className={styles.questionHeader} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>
                                         <h2 className={styles.questionTitle}>Vos coordonnées</h2>
                                     </motion.div>
-                                    <motion.input ref={nameRef} type="text" name="name" className={styles.inputField} placeholder="Nom complet" value={formData.name} onChange={handleChange} required style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.3 }} />
-                                    <motion.input ref={phoneRef} type="tel" name="phone" className={styles.inputField} placeholder="Téléphone" value={formData.phone} onChange={handleChange} style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }} />
-                                    <motion.input ref={emailRef} type="email" name="email" className={styles.inputField} placeholder="Email" value={formData.email} onChange={handleChange} required variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.5 }} />
+                                    <motion.div className={styles.inputWrapper} style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.3 }}>
+                                        <input ref={nameRef} type="text" name="name" className={styles.inputField} placeholder="Nom complet" value={formData.name} onChange={handleChange} required />
+                                    </motion.div>
+                                    <motion.div className={styles.inputWrapper} style={{ marginBottom: '1.5rem' }} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.4 }}>
+                                        <input ref={phoneRef} type="tel" name="phone" className={styles.inputField} placeholder="Téléphone" value={formData.phone} onChange={handleChange} />
+                                    </motion.div>
+                                    <motion.div className={styles.inputWrapper} variants={fadeInUp} initial="hidden" animate="visible" transition={{ delay: 0.5 }}>
+                                        <input ref={emailRef} type="email" name="email" className={styles.inputField} placeholder="Email" value={formData.email} onChange={handleChange} required />
+                                    </motion.div>
                                 </motion.div>
                             )}
                         </AnimatePresence>
@@ -601,7 +628,7 @@ export default function AuditSprint() {
                                 whileHover={{ scale: 1.03, boxShadow: '0 10px 30px rgba(138, 43, 226, 0.3)' }}
                                 whileTap={{ scale: 0.97 }}
                             >
-                                {step < totalSteps ? 'Suivant →' : '🚀 Générer mon PRD Flash'}
+                                {step < totalSteps ? 'Suivant →' : <>🚀 Vérifier mon éligibilité et<br />obtenir mon Dossier de Projet <strike>pour 5000 €</strike> gratuitement</>}
                             </motion.button>
                         </motion.div>
                     </motion.div>

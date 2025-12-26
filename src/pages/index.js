@@ -125,7 +125,7 @@ export default function Engineering() {
 
       <main>
         {/* 3. PAIN SECTION */}
-        <section className={styles.painSection}>
+        <section id="problem" className={styles.painSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white', marginBottom: '3rem' }}
@@ -186,7 +186,7 @@ export default function Engineering() {
         </section>
 
         {/* 3. METHOD SECTION */}
-        <section className={styles.methodSection}>
+        <section id="method" className={styles.methodSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white', marginBottom: '3rem' }}
@@ -247,7 +247,7 @@ export default function Engineering() {
         </section>
 
         {/* 4. SOLUTIONS / PRICING SECTION */}
-        <section className={styles.pricingSection}>
+        <section id="solutions" className={styles.pricingSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white', marginBottom: '1rem' }}
@@ -264,7 +264,7 @@ export default function Engineering() {
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
             >
-              Transparence Totale.
+              Transparence Totale. Inclus votre Dossier de projet d'une valeur de 5 000 € compris.
             </motion.p>
 
             <motion.div
@@ -279,7 +279,7 @@ export default function Engineering() {
                 variants={fadeInUp}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className={styles.pricingHeader}>Site Web High-End</div>
+                <div className={styles.pricingHeader}>Site Web Automatisé</div>
                 <p className={styles.pricingDesc}>Pour une image de marque forte et une conversion maximale.</p>
                 <div className={styles.pricingPrice} ref={el => priceRefs.current[0] = el}>À partir de 2 500 €</div>
                 <div className={styles.pricingDelivery}>Livraison : 5 jours</div>
@@ -289,8 +289,8 @@ export default function Engineering() {
                 variants={fadeInUp}
                 whileHover={{ y: -10, scale: 1.02 }}
               >
-                <div className={styles.pricingHeader}>App & Logiciel Métier</div>
-                <p className={styles.pricingDesc}>Pour créer votre produit (SaaS) ou un outil interne sur mesure.</p>
+                <div className={styles.pricingHeader}>Outil Sur-Mesure et MVP</div>
+                <p className={styles.pricingDesc}>Pour créer votre produit (SaaS) ou un outil interne sur-mesure.</p>
                 <div className={styles.pricingPrice} ref={el => priceRefs.current[1] = el}>À partir de 4 900 €</div>
                 <div className={styles.pricingDelivery}>Livraison : 7-10 jours</div>
               </motion.div>
@@ -364,7 +364,7 @@ export default function Engineering() {
         </section>
 
         {/* 6. HUMAN SECTION */}
-        <section className={styles.humanSection}>
+        <section className={styles.humanSection} id="about">
           <div className={styles.container}>
             <motion.div
               className={styles.humanGrid}
@@ -405,7 +405,7 @@ export default function Engineering() {
         </section>
 
         {/* 7. PROCESS SECTION */}
-        <section className={styles.processSection}>
+        <section className={styles.processSection} id="process">
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white' }}
@@ -424,8 +424,8 @@ export default function Engineering() {
             >
               {[
                 { num: '1', title: 'Le Quiz', time: '2 minutes', desc: 'pour qualifier votre besoin.' },
-                { num: '2', title: 'Le Diagnostic', time: '15 minutes', desc: 'pour recevoir gratuitement votre Dossier de projet (PRD). (valeur 5000€)' },
-                { num: '3', title: "L'Appel Flash", time: '1 heure', desc: 'pour valider les détails et première démo.' },
+                { num: '2', title: 'Le Diagnostic', time: '15 minutes', desc: <>pour obtenir votre Dossier de Projet <strike>à 5000€</strike> gratuitement.</> },
+                { num: '3', title: "L'Appel Flash", time: '1 heure', desc: 'pour valider les détails et voir votre première démo.' },
                 { num: '4', title: 'Le Sprint', time: '7 jours', desc: 'pour développer et automatiser avec un suivi continu.' }
               ].map((step, i) => (
                 <motion.div
@@ -455,7 +455,7 @@ export default function Engineering() {
         </section>
 
         {/* 8. FAQ SECTION */}
-        <section className={styles.faqSection}>
+        <section className={styles.faqSection} id="faq">
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white', marginBottom: '3rem' }}
@@ -493,7 +493,7 @@ export default function Engineering() {
             >
               <h3 style={{ color: 'white', marginBottom: '2rem' }}>Prêt à passer à la vitesse supérieure ?</h3>
               <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton} style={{ fontSize: '1.3rem', padding: '1.2rem 3rem' }}>
-                Générer mon Dossier de Projet gratuitement<br />(valeur 5000€)
+                🚀 Obtenir mon Dossier de Projet <strike>pour 5000€</strike> gratuitement<br />et passer à l'action !
               </Link>
             </motion.div>
           </div>
