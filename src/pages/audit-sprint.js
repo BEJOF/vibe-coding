@@ -42,9 +42,7 @@ export default function AuditSprint() {
         // Step 3: Business
         budget: '',
         deadline: '',
-        // Step 4: Validation
-        whyVibe: '',
-        // Contact
+        // Step 4: Contact
         name: '',
         phone: '',
         email: ''
@@ -195,7 +193,6 @@ export default function AuditSprint() {
             toolsOther: formData.toolsOther,
             budget: formData.budget,
             deadline: formData.deadline,
-            whyVibe: formData.whyVibe,
             name: formData.name,
             phone: formData.phone,
             email: formData.email,
@@ -232,8 +229,6 @@ export default function AuditSprint() {
             "Calcul de la timeline optimale (Vibe Logic)...",
             "Génération du PRD en cours..."
         ];
-
-        const isEligible = formData.budget !== '<2.5k';
 
         return (
             <Layout title="Analyse en cours" noFooter>
@@ -272,6 +267,7 @@ export default function AuditSprint() {
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
                                         transition={{ type: 'spring', damping: 15 }}
+                                        style={{ textAlign: 'center' }}
                                     >
                                         <motion.div
                                             style={{ fontSize: '5rem', marginBottom: '1rem' }}
@@ -279,58 +275,31 @@ export default function AuditSprint() {
                                             animate={{ scale: 1 }}
                                             transition={{ type: 'spring', delay: 0.2 }}
                                         >
-                                            {isEligible ? '🎉' : '🎓'}
+                                            🎉
                                         </motion.div>
                                         <h2 className={styles.questionTitle} style={{ marginBottom: '1rem', color: 'white' }}>
-                                            {isEligible
-                                                ? "Analyse terminée : Projet Compatible."
-                                                : "Budget identifié : Phase d'Amorçage."}
+                                            Dossier de Projet Généré !
                                         </h2>
                                         <p style={{ opacity: 0.8, fontSize: '1.2rem', marginBottom: '2rem' }}>
-                                            {isEligible
-                                                ? "Votre PRD a été généré. Compte tenu du scope, nous pouvons lancer un Sprint."
-                                                : "Votre budget semble serré pour un Sprint Vibe complet, mais votre idée est excellente."}
+                                            Merci {formData.name}, votre audit est terminé. Vous allez recevoir votre Dossier de Projet par email d'ici quelques instants.
                                         </p>
-
-                                        {isEligible ? (
-                                            <motion.div
-                                                style={{ padding: '2rem', borderRadius: '12px', border: '1px solid #8A2BE2' }}
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: 0.3 }}
+                                        <div style={{ padding: '2rem', borderRadius: '12px', border: '1px solid #8A2BE2', marginBottom: '2rem' }}>
+                                            <p style={{ marginBottom: '1.5rem' }}><strong>Étape suivante :</strong> Validez les détails techniques lors d'un Appel Flash de 15 min.</p>
+                                            <motion.a
+                                                href="https://calendly.com/goodvibecoding/15min"
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className={styles.nextButton}
+                                                style={{ display: 'inline-flex', background: '#8A2BE2', color: 'white', border: 'none' }}
+                                                whileHover={{ scale: 1.05 }}
+                                                whileTap={{ scale: 0.95 }}
                                             >
-                                                <p style={{ marginBottom: '1.5rem' }}><strong>Étape suivante :</strong> Validez les détails techniques en 15 min.</p>
-                                                <motion.a
-                                                    href="https://calendly.com/goodvibecoding/15min"
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className={styles.nextButton}
-                                                    style={{ display: 'inline-flex', background: '#8A2BE2', color: 'white', border: 'none' }}
-                                                    whileHover={{ scale: 1.05 }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                >
-                                                    Réserver mon Appel Flash
-                                                </motion.a>
-                                                <p style={{ fontSize: '0.9rem', marginTop: '1rem', opacity: 0.6 }}>Votre PRD vous a été envoyé par email.</p>
-                                            </motion.div>
-                                        ) : (
-                                            <motion.div
-                                                style={{ background: '#1a1a1a', padding: '2rem', borderRadius: '12px', border: '1px solid #555' }}
-                                                initial={{ opacity: 0, y: 20 }}
-                                                animate={{ opacity: 1, y: 0 }}
-                                                transition={{ delay: 0.3 }}
-                                            >
-                                                <p style={{ marginBottom: '1.5rem', color: '#fff' }}>Rejoignez l'Académie Good Vibe pour apprendre à lancer ce projet vous-même ou attendez la prochaine session "Starter".</p>
-                                                <motion.button
-                                                    className={styles.nextButton}
-                                                    style={{ background: 'white', color: 'black' }}
-                                                    whileHover={{ scale: 1.05 }}
-                                                    whileTap={{ scale: 0.95 }}
-                                                >
-                                                    Rejoindre la liste d'attente
-                                                </motion.button>
-                                            </motion.div>
-                                        )}
+                                                Réserver mon Appel Flash
+                                            </motion.a>
+                                        </div>
+                                        <a href="/good-vibe-coding/" className={styles.nextButton} style={{ margin: '0 auto', display: 'inline-flex', background: 'white', color: 'black' }}>
+                                            Retour au site
+                                        </a>
                                     </motion.div>
                                 )}
                             </AnimatePresence>

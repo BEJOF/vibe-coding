@@ -4,6 +4,8 @@ title: Mail
 slug: /mail
 ---
 
+# Qualification
+
 Objet : Votre projet d'outil sur-mesure - [Nom du Client] x Veloce
 Bonjour [Prénom du client],
 
@@ -41,3 +43,19 @@ La réactivité est capitale : Dans le monde du "7 jours", si tu réponds 48h ap
 L'appel de 15 min (Diagnostic) : Ne l'appelle pas "Réunion" ou "Consultation". Le mot "Diagnostic" renforce ton image d'expert (comme un médecin) qui vient régler un problème précis.
 
 Le choix limité : Ne donne jamais plus de 2 ou 3 créneaux. Tu es un expert très sollicité qui ne prend qu'un client à la fois, ton temps est précieux.
+
+# Refus
+
+Subject: Mise à jour concernant votre demande de projet"
+
+Bonjour [name],
+
+Nous vous remercions sincèrement de l'intérêt que vous portez à nos services.
+
+Après avoir pris connaissance des détails fournis, notamment l'information relative [BUDGET_DECLINED_VALUE.includes(budget.trim()) ? 'au budget' : 'à la durée'], nous sommes au regret de vous informer que votre projet ne correspond pas, pour l'instant, à nos critères ou à nos tarifs actuels.
+
+Nous vous souhaitons beaucoup de succès dans la recherche du partenaire idéal et restons à votre disposition si l'envergure ou le budget de votre projet devaient évoluer.
+
+Cordialement,
+
+L'équipe Good Vibe Coding

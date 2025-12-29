@@ -116,7 +116,7 @@ export default function Engineering() {
 
             <motion.div variants={fadeInUp}>
               <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton}>
-                Estimer mon projet en 2 minutes →
+                Estimer mon projet en 5 minutes →
               </Link>
             </motion.div>
           </motion.div>
@@ -282,6 +282,7 @@ export default function Engineering() {
                 <div className={styles.pricingHeader}>Site Web Automatisé</div>
                 <p className={styles.pricingDesc}>Pour une image de marque forte et une conversion maximale.</p>
                 <div className={styles.pricingPrice} ref={el => priceRefs.current[0] = el}>À partir de 2 500 €</div>
+                <div className={styles.pricingSupport}>+ 150 € / mois (Support & Maintenance)</div>
                 <div className={styles.pricingDelivery}>Livraison : 5 jours</div>
               </motion.div>
               <motion.div
@@ -292,6 +293,7 @@ export default function Engineering() {
                 <div className={styles.pricingHeader}>Outil Sur-Mesure et MVP</div>
                 <p className={styles.pricingDesc}>Pour créer votre produit (SaaS) ou un outil interne sur-mesure.</p>
                 <div className={styles.pricingPrice} ref={el => priceRefs.current[1] = el}>À partir de 4 900 €</div>
+                <div className={styles.pricingSupport}>+ 250 € / mois (Support & Maintenance)</div>
                 <div className={styles.pricingDelivery}>Livraison : 7-10 jours</div>
               </motion.div>
               <motion.div
@@ -301,8 +303,9 @@ export default function Engineering() {
               >
                 <div className={styles.pricingHeader}>Automatisation Totale</div>
                 <p className={styles.pricingDesc}>Pour connecter vos outils et supprimer vos tâches répétitives.</p>
-                <div className={styles.pricingPrice}>Sur devis</div>
-                <div className={styles.pricingDelivery}>Pack dès 1 500 € • Gain immédiat</div>
+                <div className={styles.pricingPrice}>À partir de 1 500 €</div>
+                <div className={styles.pricingSupport}>+ 90 € / mois (Support & Maintenance)</div>
+                <div className={styles.pricingDelivery}>Pack sur-mesure • Gain immédiat</div>
               </motion.div>
             </motion.div>
             <motion.div
@@ -315,7 +318,94 @@ export default function Engineering() {
               <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton}>
                 Démarrer mon projet maintenant
               </Link>
+              <p className={styles.pricingNote}>
+                <strong>Note :</strong> 90% de mes clients choisissent l'abonnement <strong>Sérénité</strong> pour se concentrer sur leur business pendant que je gère la tech.
+              </p>
             </motion.div>
+          </div>
+        </section>
+
+        {/* 4.5 OBSERVABILITY SECTION */}
+        <section className={styles.observabilitySection}>
+          <div className={styles.container}>
+            <div className={styles.observabilityContent}>
+              <motion.div
+                className={styles.observabilityText}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <h2 className={styles.observabilityTitle}>
+                  Plus qu’un déploiement : une surveillance active 24/7
+                </h2>
+                <p className={styles.observabilityIntro}>
+                  Un site qui tombe ou un formulaire qui bug, c'est du chiffre d'affaires perdu.
+                  Toutes mes livraisons incluent une couche d'<strong>Observabilité Senior</strong>.
+                </p>
+
+                <div className={styles.observabilityGrid}>
+                  <div className={styles.observabilityItem}>
+                    <div className={styles.observabilityIcon}>🛡️</div>
+                    <div>
+                      <h3>Détection proactive</h3>
+                      <p>Je suis alerté en temps réel du moindre bug, souvent avant vos utilisateurs.</p>
+                    </div>
+                  </div>
+                  <div className={styles.observabilityItem}>
+                    <div className={styles.observabilityIcon}>📈</div>
+                    <div>
+                      <h3>Monitoring de performance</h3>
+                      <p>Votre application reste fluide, même en cas de pic de trafic.</p>
+                    </div>
+                  </div>
+                  <div className={styles.observabilityItem}>
+                    <div className={styles.observabilityIcon}>📊</div>
+                    <div>
+                      <h3>Transparence totale</h3>
+                      <p>Vous recevez un rapport mensuel de santé de votre plateforme.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '3rem' }}>
+                  <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton}>
+                    Sécuriser mon projet maintenant
+                  </Link>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className={styles.observabilityVisual}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {/* Visual representing monitoring/dashboard */}
+                <div className={styles.monitorFrame}>
+                  <div className={styles.monitorHeader}>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <div className={styles.dot}></div>
+                    <span>Active Monitoring v2.0</span>
+                  </div>
+                  <div className={styles.monitorBody}>
+                    <div className={styles.pulseLine}></div>
+                    <div className={styles.statsRow}>
+                      <div className={styles.statBox}>
+                        <span className={styles.statLabel}>Uptime</span>
+                        <span className={styles.statValue}>99.9%</span>
+                      </div>
+                      <div className={styles.statBox}>
+                        <span className={styles.statLabel}>Latency</span>
+                        <span className={styles.statValue}>124ms</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
@@ -423,7 +513,7 @@ export default function Engineering() {
               viewport={{ once: true, amount: 0.2 }}
             >
               {[
-                { num: '1', title: 'Le Quiz', time: '2 minutes', desc: 'pour qualifier votre besoin.' },
+                { num: '1', title: 'Le Quiz', time: '5 minutes', desc: 'pour qualifier votre besoin.' },
                 { num: '2', title: 'Le Diagnostic', time: '15 minutes', desc: <>pour obtenir votre Dossier de Projet <strike>à 5000€</strike> gratuitement.</> },
                 { num: '3', title: "L'Appel Flash", time: '1 heure', desc: 'pour valider les détails et voir votre première démo.' },
                 { num: '4', title: 'Le Sprint', time: '7 jours', desc: 'pour développer et automatiser avec un suivi continu.' }
@@ -449,6 +539,74 @@ export default function Engineering() {
             >
               <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton}>
                 Démarrer mon projet →
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 7.5 SUPPORT & SERENITY SECTION */}
+        <section className={styles.supportSection} id="support">
+          <div className={styles.container}>
+            <div className={styles.supportHeader}>
+              <motion.h2
+                style={{ fontSize: '2.5rem', color: 'white', marginBottom: '1.5rem' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Je ne vous livre pas un code, je garantis votre croissance
+              </motion.h2>
+              <motion.p
+                style={{ fontSize: '1.2rem', color: '#888', maxWidth: '800px', margin: '0 auto 4rem' }}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                Le développement n'est que la première étape.<br />Pour que votre projet survive au succès, il a besoin d'une surveillance d'expert.
+              </motion.p>
+            </div>
+
+            <motion.div
+              className={styles.supportGrid}
+              variants={staggerContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              {[
+                {
+                  title: 'Surveillance Active (Observabilité)',
+                  desc: 'Mon système m\'alerte au moindre bug. J\'interviens souvent avant même que vous ne le remarquiez.',
+                  icon: '🛡️'
+                },
+                {
+                  title: 'Évolutions "Vibe"',
+                  desc: 'Besoin d\'un nouveau bouton, d\'un champ en plus ou d\'une modification mineure ? C\'est inclus et traité en moins de 24h.',
+                  icon: '⚡'
+                },
+                {
+                  title: 'Hébergement & Sécurité',
+                  desc: 'Gestion des serveurs, sauvegardes quotidiennes et mises à jour de sécurité. Vous n\'avez aucune technique à gérer.',
+                  icon: '☁️'
+                }
+              ].map((item, i) => (
+                <motion.div key={i} className={styles.supportCard} variants={fadeInUp} whileHover={{ y: -5 }}>
+                  <div className={styles.supportIcon}>{item.icon}</div>
+                  <h3 className={styles.supportCardTitle}>{item.title}</h3>
+                  <p className={styles.supportDesc}>{item.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              style={{ textAlign: 'center', marginTop: '4rem' }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+            >
+              <Link to="/good-vibe-coding/audit-sprint" className={styles.ctaButton}>
+                Choisir la Sérénité Technique
               </Link>
             </motion.div>
           </div>
