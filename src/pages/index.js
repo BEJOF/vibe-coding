@@ -326,7 +326,7 @@ export default function Engineering() {
         </section>
 
         {/* 4.5 OBSERVABILITY SECTION */}
-        <section className={styles.observabilitySection}>
+        <section id="observability" className={styles.observabilitySection}>
           <div className={styles.container}>
             <div className={styles.observabilityContent}>
               <motion.div
@@ -410,7 +410,7 @@ export default function Engineering() {
         </section>
 
         {/* 5. SOCIAL PROOF / TESTIMONIALS */}
-        <section className={styles.testimonialsSection}>
+        <section id="social-proof" className={styles.testimonialsSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2rem', color: 'white', marginBottom: '3rem' }}
@@ -454,7 +454,7 @@ export default function Engineering() {
         </section>
 
         {/* 6. HUMAN SECTION */}
-        <section className={styles.humanSection} id="about">
+        <section id="about" className={styles.humanSection}>
           <div className={styles.container}>
             <motion.div
               className={styles.humanGrid}
@@ -495,7 +495,7 @@ export default function Engineering() {
         </section>
 
         {/* 7. PROCESS SECTION */}
-        <section className={styles.processSection} id="process">
+        <section id="process" className={styles.processSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white' }}
@@ -545,7 +545,7 @@ export default function Engineering() {
         </section>
 
         {/* 7.5 SUPPORT & SERENITY SECTION */}
-        <section className={styles.supportSection} id="support">
+        <section id="support" className={styles.supportSection}>
           <div className={styles.container}>
             <div className={styles.supportHeader}>
               <motion.h2
@@ -613,7 +613,7 @@ export default function Engineering() {
         </section>
 
         {/* 8. FAQ SECTION */}
-        <section className={styles.faqSection} id="faq">
+        <section id="faq" className={styles.faqSection}>
           <div className={styles.container}>
             <motion.h2
               style={{ textAlign: 'center', fontSize: '2.5rem', color: 'white', marginBottom: '3rem' }}
